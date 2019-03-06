@@ -9,7 +9,7 @@ class Controller_M2 extends Controller_Template {
 	public function action_index() {
 		$data = array();
 		$this->template->title = 'KJMS';
-		$this->template->subtitle = 'KJMS';
+		$this->template->subtitle = 'Home';
 		$this->template->content = View::forge('m2/index', $data);
 	}
 
@@ -21,7 +21,7 @@ class Controller_M2 extends Controller_Template {
 
 	}
 	
-    public function action_moreinfo() {
+    public function action_moreinformation() {
         $data = array();
 		$this->template->title = 'KJMS';
 		$this->template->subtitle = 'More Information';
