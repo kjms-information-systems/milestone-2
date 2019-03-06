@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
 	<title><?php echo $title; ?></title>
+	<?php echo Asset::css('m2.css'); ?>
 	<meta charset='utf-8'>
 	<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+	
 </head>
 
 <body>
@@ -11,9 +14,9 @@
 		<h1>Basic Hospital</h1>
 		<nav>
 			<ul>
-				<li><a href='/~EID/ct310/index/m2/'>Home</a></li>
-				<li><a href='/~EID/ct310/index/m2/about'>About Us</a></li>
-				<li><a href='/~EID/ct310/index/m2/moreinformation'>Info</a></li>
+				<li><a href='/~mnenriq/ct310/m2/'>Home</a></li>
+				<li><a href='/~mnenriq/ct310/index/m2/about'>About Us</a></li>
+				<li><a href='/~mnenriq/ct310/index/m2/moreinformation'>Info</a></li>
 			</ul>
 		</nav>
 	</header>
