@@ -1,3 +1,5 @@
+
+
 <?php
 use \Model\Vbp;
 
@@ -38,20 +40,24 @@ public function action_vbp_modeling() {
 		$data = array();
 		$this->template->title = 'KJMS';
 		$this->template->subtitle = 'Home';
-		$performance = Security::strip_tags(Input::post('performance'));
-		$achievement = Security::strip_tags(Input::post('achievement'));
-		$data['answer'] = Vbp::calculate($performance, $achievement);
+		
+		$b_psi90 = Security::strip_tags(Input::post('b_psi90'));
+		
+		if($b_psi90 == null){
+            $b_psi90 = 1.482481;
+		}
+		
+		$p_psi90 = Security::strip_tags(Input::post('p_psi90'));
+		
+		if($p_psi90 == null){
+            $p_psi90 = 0.57255;
+		}
+		
+		$data['psi90'] = Vbp::calculate(0.964542, 0.709498, $b_psi90, $p_psi90);
+		
 		$this->template->content = View::forge('m2/vbp_modeling', $data);
 	}
 	
-	public function action_vbp_new() {
-		$data = array();
-		$data = Vbp::get_ans();
-		$this->template->title = 'KJMS';
-		$this->template->subtitle = 'Home';
-		$this->template->content = View::forge('m2/vbp_new', $data);
-	}
-
 
 	
 
