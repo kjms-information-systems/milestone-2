@@ -6,8 +6,27 @@
 //View for VBP modeling. Controls what the page looks like
 
 echo Form::open(array('action' => 'index/m2/vbp_modeling', 'method' => 'post'));
-    $answer = [1,2,3]
     ?>
+    
+    <h2>Reimbursement</h2>
+						<table border="1">
+							<tr>
+								<td id="category">Reimbursement</td>
+								<td><?php echo Form::input('b_reim', $reimbursement[0], array('class' => 'form-control'));?></td>
+							</tr>
+							<tr>
+								<td id="category">2% Penalty</td>
+								<td><?php echo $reimbursement[1];?></td>
+							</tr>
+							<tr>
+								<td id="category">TPS</td>
+								<td><?php echo $tps[0];?></td>
+							</tr>
+							<tr>
+								<td id="category">Total Reimbursement</td>
+								<td><?php echo $reimbursement[2];?></td>
+							</tr>
+                        </table>
     
     <div id="Hospital_Scores">
 					<h2>Total Performance Scores</h2>
