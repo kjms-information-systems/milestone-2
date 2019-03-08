@@ -39,6 +39,43 @@ class Vbp extends \Model {
 	
 		return [$achievement, $benchmark, $baseline, $performance, $achievement_points, $improvement_points, $measure_score];
 	}
+
+	public static function tps_domain($measure_scores){
+		$total_measure = 0;
+		for ($i = 0; $i < sizeof($measure_scores); $i++){
+			$total_measure = $total_measure + $measure_scores[$i];
+		}
+		
+		$unweighted_domain = ($total_measure / (10 * sizeof($measure_scores))) * 100;
+		$weighted_domain = $unweighted_domain * 0.25;
 	
+		return [$total_measure, $unweighted_domain, $weighted_domain];
+	
+	}	
+	
+	public static function tps_HCAHPS($measure_scores){
+		$total_measure = 0;
+		for ($i = 0; $i < sizeof($measure_scores); $i++){
+			$total_measure = $total_measure + $measure_scores[$i];
+		}
+		
+		$consistency_score = 15;
+		
+		$unweighted_domain = ($total_measure + $consistency_score);
+		$weighted_domain = $unweighted_domain * 0.25;
+	
+		return [$total_measure, $unweighted_domain, $weighted_domain];
+	
+	}	
+	
+	public static function tps($domain_scores){
+		$total = 0;
+		for ($i = 0; $i < sizeof($domain_scores); $i++){
+			$total = $total + $domain_scores[$i];
+		}
+	
+		return [$total];
+	
+	}	
 
 }
