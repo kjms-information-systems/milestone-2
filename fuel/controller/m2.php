@@ -321,7 +321,17 @@ public function action_vbp_modeling() {
 		$domain_scores = [$data['cc_tps'][2], $data['hcahps_tps'][2], $data['safety_tps'][2], $data['efficiency_tps'][2]];
 		$data['tps'] = Vbp::tps($domain_scores);
 		
+		//REIMBURSEMENT
 		
+		$b_reim = Security::strip_tags(Input::post('b_reim'));
+		if($b_reim == null){
+            $b_reim = 38145589.18;
+		}
+		
+		$reimbursement_data = [$b_reim, $data['tps'][0]];
+		$data['reimbursement'] = Vbp::reimbursement($reimbursement_data);
+		
+		//Output data to site
 		$this->template->content = View::forge('m2/vbp_modeling', $data);
 	}
 	
