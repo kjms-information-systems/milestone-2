@@ -77,5 +77,18 @@ class Vbp extends \Model {
 		return [$total];
 	
 	}	
+	
+	public static function reimbursement($reimbursement_data){
+		$reimbursement = $reimbursement_data[0];
+		$tps = $reimbursement_data[1];
+		
+		$penalty = $reimbursement * 0.02;
+		$money_back = ($tps / 100) * $penalty;
+		
+		$total_reimbursement = $reimbursement - $penalty + $money_back;
+	
+		return [$reimbursement, $penalty, $total_reimbursement];
+	
+	}	
 
 }
