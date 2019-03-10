@@ -17,6 +17,7 @@
 				<li><a href='/~mnenriq/ct310/m2/'>Home</a></li>
 				<li><a href='/~mnenriq/ct310/index/m2/about'>About Us</a></li>
 				<li><a href='/~mnenriq/ct310/index/m2/moreinformation'>Info</a></li>
+				<li><a href='/~mnenriq/ct310/index/m2/vbp_modeling'>VBP Modeling</a></li>
 			</ul>
 		</nav>
 	</header>
