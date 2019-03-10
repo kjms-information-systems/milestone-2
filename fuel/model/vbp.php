@@ -6,8 +6,42 @@ namespace Model;
 class Vbp extends \Model {
 	
 	public static function get_data($filename) {
-		$csv = array_map('str_getcsv', file($filename));	
+		$csv = array();
+		$file = fopen($filename, "r");
+		$csv['psi90'] = fgetcsv($file, 1000, ",");
+		$csv['ha1'] = fgetcsv($file, 1000, ",");
+		$csv['ha2'] = fgetcsv($file, 1000, ",");
+		$csv['ha3'] = fgetcsv($file, 1000, ",");
+		$csv['ha4'] = fgetcsv($file, 1000, ",");
+		$csv['ha5'] = fgetcsv($file, 1000, ",");
+		$csv['ha6'] = fgetcsv($file, 1000, ",");
+		$csv['pc01'] = fgetcsv($file, 1000, ",");
+		$csv['safety_tps'] = fgetcsv($file, 1000, ",");
+		$csv['mortAMI'] = fgetcsv($file, 1000, ",");
+		$csv['mortHF'] = fgetcsv($file, 1000, ",");
+		$csv['mortPN'] = fgetcsv($file, 1000, ",");
+		$csv['MSPB'] = fgetcsv($file, 1000, ",");
+		$csv['efficiency_tps'] = fgetcsv($file, 1000, ",");
+		$csv['nurses'] = fgetcsv($file, 1000, ",");
+		$csv['doctors'] = fgetcsv($file, 1000, ",");
+		$csv['staff'] = fgetcsv($file, 1000, ",");
+		$csv['care'] = fgetcsv($file, 1000, ",");
+		$csv['medicine'] = fgetcsv($file, 1000, ",");
+		$csv['cleanliness'] = fgetcsv($file, 1000, ",");
+		$csv['discharge'] = fgetcsv($file, 1000, ",");
+		$csv['overall'] = fgetcsv($file, 1000, ",");
+		$csv['hcahps_tps'] = fgetcsv($file, 1000, ",");
+		$csv['tps'] = fgetcsv($file, 1000, ",");
+		$csv['reimbursement'] = fgetcsv($file, 1000, ",");
 		return $csv;
+	}
+	
+	public static function put_data($filename, $arr) {
+		$myfile = fopen($filename, "w");
+		foreach ($arr as $row){
+			fputcsv($myfile, $row);
+		}
+		fclose($myfile);
 	}
 	
 	public static function calculate($achievement, $benchmark, $baseline, $performance){
