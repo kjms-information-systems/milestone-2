@@ -331,6 +331,9 @@ public function action_vbp_modeling() {
 		$reimbursement_data = [$b_reim, $data['tps'][0]];
 		$data['reimbursement'] = Vbp::reimbursement($reimbursement_data);
 		
+		Vbp::put_data("test.csv", $data);
+		echo json_encode(Vbp::get_data("test.csv"));
+		
 		//Output data to site
 		$this->template->content = View::forge('m2/vbp_modeling', $data);
 	}
