@@ -37,7 +37,7 @@ class Controller_M2 extends Controller_Template {
 public function action_vbp_modeling() {
 		$data = array();
 		$this->template->title = 'KJMS';
-		$this->template->subtitle = 'Home';
+		$this->template->subtitle = 'Interactive Model';
 		
 		//SAFETY DOMAIN
 		
