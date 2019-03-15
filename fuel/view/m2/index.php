@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<p>This is the website for KJMS Information Systems. We are a student lead company that provides information solutions for real world 
+<p>Welcome to the online headquarters for KJMS Information Systems. We are a student lead company that provides information solutions for real world 
 problems.</p>
 <p>On our cutting edge website, you are able to model hospital vbp scores in real time, changing any of the measures and viewing the results.
 You will also be able to save and load model sets, along with adding comments, so that you can be as productive as possible. Go to VBP Modeling
