@@ -11,15 +11,15 @@
 
 <body>
 	<header>
-		<h1>Basic Hospital</h1>
-		<nav>
-			<ul>
-				<li><a href='/~mnenriq/ct310/m2/'>Home</a></li>
-				<li><a href='/~mnenriq/ct310/index/m2/about'>About Us</a></li>
-				<li><a href='/~mnenriq/ct310/index/m2/moreinformation'>Info</a></li>
-				<li><a href='/~mnenriq/ct310/index/m2/vbp_modeling'>VBP Modeling</a></li>
-			</ul>
-		</nav>
+		<h1>KJMS Information Systems</h1>
+    <div class="topnav">
+        <ul>
+            <a href='/~mnenriq/ct310/m2/'>Home</a>
+            <a href='<?php echo Uri::create('index.php/m2/about'); ?>'>About Us</a>
+            <a href='<?php echo Uri::create('index.php/m2/moreinformation'); ?>'>Info</a>
+            <a href='<?php echo Uri::create('index.php/m2/vbp_modeling'); ?>'>VBP Modeling</a>
+        </ul>
+    </div>
 	</header>
 	<div id='main' class='container'>
 		<h2><?php echo $subtitle;?></h2>
