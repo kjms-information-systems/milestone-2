@@ -14,7 +14,7 @@
     
     
     <div class="card">
-    <?php echo Asset::img('josette.jpg',  array('class' => 'cardPhoto')); ?>
+    <?php echo Asset::img('head shot.PNG',  array('class' => 'cardPhoto')); ?>
     <br>
     <h2>Scott Sparks</h2>
     <p class="bodyCard">Scott is a second year at CSU who is also pursueing a concentration in Human Centered Computing.
