@@ -24,9 +24,13 @@
 	<div id='main' class='container'>
 		<h2><?php echo $subtitle;?></h2>
 		<?php echo $content; ?>
-	</div>
-	<footer>
-		<small>&copy; Copyright <?php echo date('Y');?>, Your Name</small>
+		<br>
+        <footer>
+        Part of a <a href="https://www.cs.colostate.edu/~ct310">CT310</a> course project<br>
+		<small>&copy; Copy Right <?php echo date('Y');?> Kiera Lindgren, Marvin Enirquez, Josette Grinslade, Scott Sparks</small>
 	</footer>
+	</div>
+	
 </body>
+
 </html>
