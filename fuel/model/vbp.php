@@ -4,7 +4,6 @@ namespace Model;
 
 
 class Vbp extends \Model {
-	
 	public static function get_data($filename) {
 		$csv = array();
 		$file = fopen($filename, "r");
@@ -20,6 +19,7 @@ class Vbp extends \Model {
 		$csv['mortAMI'] = fgetcsv($file, 1000, ",");
 		$csv['mortHF'] = fgetcsv($file, 1000, ",");
 		$csv['mortPN'] = fgetcsv($file, 1000, ",");
+		$csv['cc_tps'] = fgetcsv($file, 1000, ",");
 		$csv['MSPB'] = fgetcsv($file, 1000, ",");
 		$csv['efficiency_tps'] = fgetcsv($file, 1000, ",");
 		$csv['nurses'] = fgetcsv($file, 1000, ",");
@@ -33,6 +33,7 @@ class Vbp extends \Model {
 		$csv['hcahps_tps'] = fgetcsv($file, 1000, ",");
 		$csv['tps'] = fgetcsv($file, 1000, ",");
 		$csv['reimbursement'] = fgetcsv($file, 1000, ",");
+		$csv['comments'] = fgetcsv($file, 1000, ",");
 		return $csv;
 	}
 	
