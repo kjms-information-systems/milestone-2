@@ -39,7 +39,9 @@ public function action_vbp_modeling() {
 		$this->template->title = 'KJMS';
 		$this->template->subtitle = 'VBP Model';
 		
-		$data = Vbp::get_data("test.csv");
+
+        $data = Vbp::get_data("test.csv");
+
 		//SAFETY DOMAIN
 		
 		//Calculating PSI90
@@ -338,8 +340,13 @@ public function action_vbp_modeling() {
 		
 		$data['comments'] = array();
 		$data['comments'][0] = Security::strip_tags(Input::post('com'));
+        
+        $data['fileName'] = array();
+		$data['fileName'][0] = Security::strip_tags(Input::post('fs'));
 		
-		Vbp::put_data("Default.csv", $data);
+        $test = $data['fileName'][0];
+        
+		Vbp::put_data("$test.csv", $data);
 		
 		//Output data to site
 		$this->template->content = View::forge('m2/vbp_modeling', $data);
