@@ -359,6 +359,14 @@ echo Form::open(array('action' => 'index/m2/vbp_modeling', 'method' => 'post'));
 							</tr>		
     </table>
     
+    <h2>Comments</h2>
+						<table border="1">
+							<tr>
+								<td id="category">Comments</td>
+								<td><?php echo Form::input('com', $comments[0], array('class' => 'form-control'));?></td>
+							</tr>
+                        </table>
+    
     
     
     <?php
