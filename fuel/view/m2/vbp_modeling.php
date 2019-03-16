@@ -363,9 +363,10 @@ echo Form::open(array('action' => 'index/m2/vbp_modeling', 'method' => 'post'));
                     <table border="1">
                         <tr>
                             <td id="category">Comments</td>
-                            <td><?php echo Form::input('com', $comments[0], array('class' => 'form-control'));?></td>
+                            <td id="categoryCom"><?php echo Form::input('com', $comments[0], array('class' => 'form-control'));?></td>
                         </tr>
                     </table>
+                    
 <h2>Save this file</h2>
                     <table border="1">
                         <tr>
@@ -379,12 +380,9 @@ echo Form::open(array('action' => 'index/m2/vbp_modeling', 'method' => 'post'));
     
     
     <?php
-    
-	
-	
+
+	echo Form::button('frmbutton', 'Calculate/Save', array('class' => 'btn btn-default'));
 	echo '<br><br>';
 
-	echo Form::button('frmbutton', 'Calculate', array('class' => 'btn btn-default'));
-	
 echo Form::close();
 
