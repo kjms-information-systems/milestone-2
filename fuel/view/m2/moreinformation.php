@@ -28,7 +28,7 @@
     Subject: <input name="subject" type="text" />
         <br>
         <br>
-    Tell us why do you want a demo?
+    Tell us why you want a demo?
     <br>
 
     <textarea name="comment" rows="15" cols="40"></textarea>
