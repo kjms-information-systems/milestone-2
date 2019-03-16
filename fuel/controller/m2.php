@@ -337,10 +337,9 @@ public function action_vbp_modeling() {
 		$data['reimbursement'] = Vbp::reimbursement($reimbursement_data);
 		
 		$data['comments'] = array();
-		$data['comments'][0] = Security::strip_tags(Input::post('MARVIN_NAME_THIS_TO_MATCH_VIEW'));
+		$data['comments'][0] = Security::strip_tags(Input::post('com'));
 		
 		Vbp::put_data("Default.csv", $data);
-		//echo json_encode(Vbp::get_data("test.csv"));
 		
 		//Output data to site
 		$this->template->content = View::forge('m2/vbp_modeling', $data);
