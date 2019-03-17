@@ -357,11 +357,18 @@ echo Form::open(array('action' => 'index.php/m2/vbp_modeling', 'method' => 'post
                         </tr>		
 </table>
 
+ <?php
+
+	echo '<br><br>';
+	echo Form::button('frmbutton', 'Calculate VBP', array('class' => 'btn btn-default'));
+	echo '<br><br>';
+	?>
+
 <h2>Comments</h2>
                     <table border="1">
                         <tr>
                             <td id="category">Comments</td>
-                            <td><?php echo Form::input('com', $comments[0], array('class' => 'form-control'));?></td>
+                            <td><?php echo Form::textarea('com', $comments[0], array('class' => 'form-control'));?></td>
                         </tr>
                     </table>
 <h2>Save this file</h2>
@@ -372,15 +379,37 @@ echo Form::open(array('action' => 'index.php/m2/vbp_modeling', 'method' => 'post
                         </tr>
                     </table>
     
-                        
+    
+               
     
     
     
     <?php
-    
-	
-	
+   
+    echo '<br>';
+	echo Form::button('frmbutton', 'Save File', array('class' => 'btn btn-default'));
 	echo '<br><br>';
-	echo Form::button('frmbutton', 'Calculate', array('class' => 'btn btn-default'));
 	
+	?>
+	
+	<h2>Load File</h2>
+	
+	<?php
+	
+	$csvs = File::read_dir(DOCROOT, 1, array(
+                '\.csv$' => 'file', // or css files
+        ));
+
+        $files = array();
+        for ($i = 1; $i < count($csvs) - 1; $i++){
+            array_push($files, $csvs[$i]);
+        }
+        
+echo Form::select('files', 'none', $files);
+$load_name = Form::select('files', 'none', $files);
+
+	echo Form::button('test', 'Load File', array('class' => 'btn btn-default'));
+
+	echo '<br><br>';
+
 echo Form::close();
