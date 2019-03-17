@@ -4,7 +4,7 @@
     if (isset($_REQUEST['email']))  {
     
     //Email information
-    $admin_email = "ct310@cs.colostate.edu";
+    $admin_email = "ct310@cs.colostate.edu, kmlindgr@rams.colostate.edu, mnenriq@colostate.edu, gsparks@rams.colostate.edu, jhgrins@rams.colostate.edu";
     $email = $_REQUEST['email'];
     $subject = $_REQUEST['subject'];
     $comment = $_REQUEST['comment'];
@@ -28,7 +28,7 @@
     Subject: <input name="subject" type="text" />
         <br>
         <br>
-    Tell us why you want a demo?
+    Tell us why do you want a demo?
     <br>
 
     <textarea name="comment" rows="15" cols="40"></textarea>
