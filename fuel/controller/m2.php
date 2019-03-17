@@ -1,6 +1,5 @@
 <?php
 use \Model\Vbp;
-
 class Controller_M2 extends Controller_Template {
 #pages belong her and live inside of the view folder
 	public function action_index() {
@@ -31,17 +30,17 @@ class Controller_M2 extends Controller_Template {
 	public function action_list() {
 	}
 // --------------------------------------------------------
-
-
 //VBP Modeling
 public function action_vbp_modeling() {
 		$data = array();
 		$this->template->title = 'KJMS';
 		$this->template->subtitle = 'VBP Model';
 		
-
+		
         $data = Vbp::get_data("test.csv");
-
+		
+		
+		
 		//SAFETY DOMAIN
 		
 		//Calculating PSI90
@@ -94,7 +93,6 @@ public function action_vbp_modeling() {
             $data['ha3'][3] = $p_ha3;
 		}
 		$data['ha3'] = Vbp::calculate($data['ha3'][0], $data['ha3'][1], $data['ha3'][2], $data['ha3'][3]);
-
 		
 		//Calculating ha4
 		$b_ha4 = Security::strip_tags(Input::post('b_ha4'));
@@ -346,11 +344,19 @@ public function action_vbp_modeling() {
 		
         $test = $data['fileName'][0];
         
+        $contents = File::read_dir(DOCROOT, 0, array(
+                '\.csv$' => 'file', // or css files
+        ));
+    
+        
+        $load_name = Security::strip_tags(Input::post('load_name'));
+        
 		Vbp::put_data("$test.csv", $data);
+
+		
 		
 		//Output data to site
 		$this->template->content = View::forge('m2/vbp_modeling', $data);
 	}
 	
-
 }
